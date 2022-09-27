@@ -46,14 +46,18 @@ TARGET_NO_BOOTLOADER := true
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=2048 androidboot.configfs=true androidboot.usbcontroller=a600000.dwc3 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := snapdragon
-TARGET_KERNEL_LLVM_BINUTILS := true
+TARGET_KERNEL_CLANG_VERSION := r383902
+TARGET_KERNEL_LLVM_BINUTILS := false
+KERNEL_SUPPORTS_LLVM_TOOLS := false
+TARGET_KERNEL_ADDITIONAL_FLAGS := AS=aarch64-linux-android-as AR=aarch64-linux-android-ar NM=aarch64-linux-android-nm OBJCOPY=aarch64-linux-android-objcopy OBJDUMP=aarch64-linux-android-objdump STRIP=aarch64-linux-android-strip LD=aarch64-linux-android-ld
+KERNEL_LD := LD=aarch64-linux-android-ld
 TARGET_KERNEL_CONFIG := enchilada_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/sdm845
 
