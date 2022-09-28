@@ -52,13 +52,15 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CLANG_VERSION := r383902
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/$(HOST_OS)-x86/clang-r383902
-KERNEL_TOOLCHAIN := $(GCC_PREBUILTS)/aarch64/aarch64-linux-android-4.9/bin
-KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_LLVM_BINUTILS := false
+TARGET_KERNEL_CLANG_VERSION := prelude
+KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-prelude>
+#TARGET_KERNEL_LLVM_BINUTILS := true
+#KERNEL_SUPPORTS_LLVM_TOOLS := true
+TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_KERNEL_CONFIG := enchilada_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/sdm845
+TARGET_PREBUILT_KERNEL := device/oneplus/sdm845-common/prebuilts/Image.gz-dtb
+BOARD_PREBUILT_DTBOIMAGE := device/oneplus/sdm845-common/prebuilts/dtbo.img
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
