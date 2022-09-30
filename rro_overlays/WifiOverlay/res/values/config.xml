@@ -62,4 +62,10 @@
 
     <!-- integer indicating additional disconnect delay (in ms) after IMS onLost() indication is received -->
     <integer translatable="false" name="config_wifiDelayDisconnectOnImsLostMs">1000</integer>
+
+    <!-- Indicate the driver support NL80211_REG_CHANGED event. -->
+    <bool translatable="false" name="config_wifiDriverSupportedNl80211RegChangedEvent">true</bool>
+
+    <!-- Indicate the device support request channel on Wi-Fi Aware data-path. -->
+    <bool translatable="false" name="config_wifiSupportChannelOnDataPath">true</bool>
 </resources>
