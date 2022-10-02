@@ -98,6 +98,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     otapreopt_script
 
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_verifier
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
